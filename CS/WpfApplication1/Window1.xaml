@@ -1,0 +1,23 @@
+﻿<Window x:Class="WpfApplication1.Window1" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="Window1" Height="310" Width="508" xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:local="clr-namespace:WpfApplication1">      
+        <Grid>
+        <dxg:GridControl Name="gridControl1">
+            <dxg:GridControl.Resources>
+                <ControlTemplate x:Key="CheckboxDisplayTemplate">
+                    <TextBlock HorizontalAlignment="Center" Text="{Binding Path=Value, Converter={local:checkBoxConverter}}" />
+                </ControlTemplate>
+            </dxg:GridControl.Resources>
+
+            <dxg:GridControl.Columns>
+                <dxg:GridColumn FieldName="Name" />
+                <dxg:GridColumn FieldName="Salary" Width="100" ToolTip="Salary" />
+
+                <dxg:GridColumn FieldName="IsFired" DisplayTemplate="{StaticResource CheckboxDisplayTemplate}" />
+                                
+                
+            </dxg:GridControl.Columns>
+            <dxg:GridControl.View>
+                <dxg:TableView x:Name="view" />
+            </dxg:GridControl.View>
+        </dxg:GridControl>
+    </Grid>
+</Window>
