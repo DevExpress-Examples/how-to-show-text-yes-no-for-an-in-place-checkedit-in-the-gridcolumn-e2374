@@ -8,16 +8,16 @@
         <Grid>
         <dxg:GridControl Name="gridControl1">
             <dxg:GridControl.Resources>
-                <ControlTemplate x:Key="CheckboxDisplayTemplate">
+                <DataTemplate x:Key="CheckboxDisplayTemplate">
                     <TextBlock HorizontalAlignment="Center" Text="{Binding Path=Value, Converter={local:checkBoxConverter}}" />
-                </ControlTemplate>
+                </DataTemplate>
             </dxg:GridControl.Resources>
 
             <dxg:GridControl.Columns>
                 <dxg:GridColumn FieldName="Name" />
                 <dxg:GridColumn FieldName="Salary" Width="100" ToolTip="Salary" />
 
-                <dxg:GridColumn FieldName="IsFired" DisplayTemplate="{StaticResource CheckboxDisplayTemplate}" />
+                <dxg:GridColumn FieldName="IsFired" CellDisplayTemplate="{StaticResource CheckboxDisplayTemplate}" />
                                 
                 
             </dxg:GridControl.Columns>
